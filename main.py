@@ -10,7 +10,7 @@ app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 
 @app.route('/')
 def index():
-    with open("Python Projects Portfolio Details.csv", 'r') as file:
+    with open("Python Projects Portfolio Details.csv", 'r',encoding='latin-1') as file:
         content = file.readlines()
 
     new_list = []
