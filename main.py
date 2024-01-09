@@ -10,7 +10,7 @@ app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 
 @app.route('/')
 def index():
-    with open("Python Projects Portfolio Details.csv", 'r',encoding='latin-1') as file:
+    with open("Python Projects Portfolio Details.csv", 'r', encoding='latin-1') as file:
         content = file.readlines()
 
     new_list = []
@@ -85,6 +85,11 @@ def send_email(name, email, phone, message):
 @app.route('/resume', methods=["GET", "POST"])
 def resume():
     return render_template("new.html")
+
+
+@app.route('/new', methods=["GET", "POST"])
+def new():
+    return render_template("resume.html")
 
 
 if __name__ == "__main__":
