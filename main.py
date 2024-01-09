@@ -84,7 +84,7 @@ def send_email(name, email, phone, message):
 
 @app.route('/resume', methods=["GET", "POST"])
 def resume():
-    return render_template("resume.html")
+    return render_template("new.html")
 
 
 if __name__ == "__main__":
