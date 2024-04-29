@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio Website</title>
+    <title>Portfolio Ezhilarasan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style>
@@ -79,6 +79,9 @@
           width: 30%;
           border-radius: 100%;
         }
+    p{
+      font-size: x-large;
+    }
 
       </style>
  </head>
@@ -86,53 +89,54 @@
 
 
 <!-- Nav Bar -->
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary" id="mainNav">
-            <div class="container px-4 px-lg-8">
-              <span  style="font-size: xx-large; font-weight: bold;" class="navbar-brand">
-                <img id="heading-pic" src="static/images/portfolio.png" alt="portfolio"> EJ
-              </span>
-              <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="navbar-collapse collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                  <li class="nav-item">
-                    <a style="color: white; font-weight: bold; font-size: large;" class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('index')}}">Home📁</a>
-                  </li>
-                  <li class="nav-item">
-                    <a style="color: white; font-weight: bold;font-size: large;"  class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('about')}}">About🪪</a>
-                  </li>
-                  <li class="nav-item">
-                    <a style="color: white; font-weight: bold;font-size: large;" class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('contact')}}">Contact☎️</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-         </nav>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary" id="mainNav">
+  <div class="container px-4 px-lg-8">
+    <span  style="font-size: xx-large; font-weight: bold;" class="navbar-brand">
+      <img id="heading-pic" src="static/images/portfolio.png" alt="portfolio"> EJ
+    </span>
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto py-4 py-lg-0">
+        <li class="nav-item">
+          <a style="color: white; font-weight: bold; font-size: large;" class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('index')}}">HOME📁</a>
+        </li>
+        <li class="nav-item">
+          <a style="color: white; font-weight: bold;font-size: large;"  class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('about')}}">ABOUT📰</a>
+        </li>
+        <li class="nav-item">
+          <a style="color: white; font-weight: bold;font-size: large;" class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('contact')}}">CONTACT☎️</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 
 <!-- Intro -->
         <div class="container my-5">
           <div class="row align-items-center rounded-3 border shadow-lg">
-            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+            <div class="col-lg-8 p-lg-5 pt-lg-3">
               <h1 class="display-6 fw-bold lh-1 text-body-emphasis py-3">Data, Design, Development and Analysis</h1>
-              <h3 class="pb-2 border-bottom py-3">Hi I am Ezhilarasan,</h3>
-              <h3 class="my-4">I am a junior developer in the field of data analysis and data science,
-                and i also work on web and app development</h3>
+              <h3 class="pb-2 border-bottom py-3">Hi! I am Ezhilarasan,</h3>
+              <h3 class="my-4">I am a developer in the field of data analysis and data science,
+                and i also work on web development.</h3>
               <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-                <a href="{{url_for('resume')}}"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Resume</button></a>
+                <a href="{{url_for('resume')}}"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Check Resume</button></a>
               </div>
             </div>
-            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-              <img class="rounded-lg-3 col-md-12 px-5 py-5" src="static/images/ej.jpg" alt="" width="90%">
+            <div class="col-lg-3 offset-lg-1 p-0 overflow-hidden shadow-lg">
+              <img class="rounded-lg-4 col-sm-12 px-2 py-2" src="static/images/ej.jpg" width="50%" style="margin-left: auto; margin-right: auto; display: block;">
             </div>
           </div>
         </div>
 
 
+
         <!-- shows in Laptop -->
       <!-- Web Projects Card -->
-      <div class="container laptop px- py-5" id="custom-cards">
+      <div class="container laptop py-5" id="custom-cards">
         <h1 class="pb-2 border-bottom">Web Projects🧑🏻‍💻</h1>
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-5 px-5 py-4">
           {% for i in data[1:10]%}
@@ -591,24 +595,26 @@ items.forEach((el) => {
 
 </body>
 <div class="container">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-8 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-          <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-8 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="mb-3 mb-md-0 text-body-secondary">©{{year}} Ezhilarasan A</span>
+    </div>
+
+    <ul class="nav col-md-3 justify-content-end list-unstyled d-flex">
+      <li class="m-2">
+        <a href="https://github.com/EJezhil/"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub" width="60"  class="rounded-circle border border-white">
         </a>
-        <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Ezhilarasan A</span>
-      </div>
-  
-      <ul class="nav col-md-3 justify-content-end list-unstyled d-flex">
-        <li class="m-2">
-          <a href="https://github.com/"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub" width="60"  class="rounded-circle border border-white">
-          </a>
-          <a href="https://www.instagram.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="instagram" width="50"  class="rounded-circle border border-white">
-          </a>  
-          <a href="https://www.facebook.com/"><img src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png" alt="facebook" width="50"  class="rounded-circle border border-white">
-          </a>  
-        </li> 
-        </ul>
-    </footer>
+        <a href="https://www.instagram.com/ej._65/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="instagram" width="50"  class="rounded-circle border border-white">
+        </a>  
+        <a href="https://in.linkedin.com/in/ezhilarasan-a-9931b5224"> <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="55" height="55" viewBox="0 0 48 48">
+          <path fill="#0288D1" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"></path><path fill="#FFF" d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"></path>
+          </svg> 
+        </a> 
+      </li> 
+      </ul>
+  </footer>
 </div>
 </html>

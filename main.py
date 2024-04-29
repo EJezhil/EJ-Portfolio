@@ -1,4 +1,5 @@
 # Flask App
+import datetime
 import os
 import smtplib
 
@@ -7,10 +8,13 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 
+today = datetime.datetime.now()
+year = today.year
+
 
 @app.route('/')
 def index():
-    with open("Python Projects Portfolio Details.csv", 'r', encoding='latin-1') as file:
+    with open("Python Projects Portfolio Details.csv", 'r') as file:
         content = file.readlines()
 
     new_list = []
@@ -25,39 +29,12 @@ def index():
             j = j.split(",")
             new_list2.append(j)
 
-    # project_name = []
-    # description = []
-    # image_url = []
-    # type = []
-    # based_on = []
-    # git_url = []
-    # website_url = []
-    # difficulty = []
-    #
-    # for i in new_list2[1:]:
-    #     project_name.append(i[0])
-    #     description.append(i[1])
-    #     image_url.append(i[2])
-    #     type.append(i[3])
-    #     based_on.append(i[4])
-    #     git_url.append(i[5])
-    #     website_url.append(i[6])
-    #     difficulty.append(i[7])
-
-    # print(project_name)
-    # print(description)
-    # print(image_url)
-    # print(type)
-    # print(based_on)
-    # print(git_url)
-    # print(website_url)
-    # print(difficulty)
-    return render_template("index.html", data=new_list2)
+    return render_template("index.html", data=new_list2,year= year)
 
 
 @app.route('/about', methods=["GET", "POST"])
 def about():
-    return render_template("about.html")
+    return render_template("about.html",year= year)
 
 
 @app.route('/contact', methods=["GET", "POST"])
@@ -65,8 +42,8 @@ def contact():
     if request.method == "POST":
         datas = request.form
         send_email(datas["name"], datas["email"], datas["phone"], datas["message"])
-        return render_template("contact.html", msg="Form submission successful!", msg_sent=True)
-    return render_template("contact.html", msg_sent=False)
+        return render_template("contact.html", msg="Form submission successful!", msg_sent=True,year= year)
+    return render_template("contact.html", msg_sent=False,year= year)
 
 
 def send_email(name, email, phone, message):
@@ -84,13 +61,10 @@ def send_email(name, email, phone, message):
 
 @app.route('/resume', methods=["GET", "POST"])
 def resume():
-    return render_template("new.html")
-
-
-@app.route('/new', methods=["GET", "POST"])
-def new():
-    return render_template("resume.html")
+    return render_template("resume.html",year= year)
 
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
