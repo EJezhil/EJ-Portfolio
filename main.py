@@ -63,8 +63,12 @@ def send_email(name, email, phone, message):
 def resume():
     return render_template("resume.html",year= year)
 
+@app.route('/resume_pdf', methods=["GET", "POST"])
+def resume_pdf():
+    return render_template("resume_pdf.html",year= year)
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
 
 
